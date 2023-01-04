@@ -7,4 +7,3 @@ function calculateTime() {
   inputStorage = unixInput.value;
   hourMinSec.innerHTML = "THE TIME IS: " + inputStorage;
 }
-console.log("dog");
