@@ -46,4 +46,28 @@ function areaOfTriangle(a, b, c) {
   return area;
 }
 
-console.log(areaOfTriangle(1, 2, 3));
+// console.log(areaOfTriangle(1, 2, 3));
+//
+
+// 4. Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
+let exampleArray = [
+  { name: "ryu", grade: 65 },
+  { name: "ken", grade: 86 },
+  { name: "cammy", grade: 99 },
+  { name: "guile", grade: 76 },
+  { name: "chun-li", grade: 78 },
+  { name: "blanka", grade: 55 },
+  { name: "sagat", grade: 43 },
+  { name: "m. bison", grade: 11 },
+  { name: "vega", grade: 45 },
+];
+
+function classAverages(objArray) {
+  let gradeArray = [];
+  let classTotal = 0;
+  objArray.forEach((student) => gradeArray.push(student.grade));
+  gradeArray.forEach((grade) => (classTotal += grade));
+  return classTotal / gradeArray.length;
+}
+
+console.log(classAverages(exampleArray));
