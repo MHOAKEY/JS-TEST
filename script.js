@@ -49,7 +49,12 @@ function areaOfTriangle(a, b, c) {
 // console.log(areaOfTriangle(1, 2, 3));
 //
 
-// 4. Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
+// #3 Write a function that finds the next year when a date entered will be a sunday. Function will take day and month and return year.
+// HINT start with next year and don't bother checking past 2050.
+// example: jan 1
+// answer: 2023
+
+// #4 Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
 let exampleArray = [
   { name: "ryu", grade: 65 },
   { name: "ken", grade: 86 },
@@ -72,7 +77,7 @@ function classAverages(objArray) {
   let arrayLength = gradeArray.length;
   let classAverage = classTotal / arrayLength;
   objArray.forEach((student) => {
-    if (student.grade >= classAverage) aboveAv.push(student.name);
+    if (student.grade > classAverage) aboveAv.push(student.name);
     else belowAv.push(student.name);
   });
   return (
