@@ -64,10 +64,27 @@ let exampleArray = [
 
 function classAverages(objArray) {
   let gradeArray = [];
+  let aboveAv = [];
+  let belowAv = [];
   let classTotal = 0;
   objArray.forEach((student) => gradeArray.push(student.grade));
   gradeArray.forEach((grade) => (classTotal += grade));
-  return classTotal / gradeArray.length;
+  let arrayLength = gradeArray.length;
+  let classAverage = classTotal / arrayLength;
+  objArray.forEach((student) => {
+    if (student.grade >= classAverage) aboveAv.push(student.name);
+    else belowAv.push(student.name);
+  });
+  return (
+    "Class average: " +
+    classAverage +
+    "\n" +
+    "Above average: " +
+    aboveAv +
+    "\n" +
+    "Below Average: " +
+    belowAv
+  );
 }
 
 console.log(classAverages(exampleArray));
