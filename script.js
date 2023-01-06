@@ -54,6 +54,66 @@ function areaOfTriangle(a, b, c) {
 // example: jan 1
 // answer: 2023
 
+function unixInSundayOut(unixTimeCode) {
+  let dayOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let date = new Date(unixTimeCode * 1000);
+  let year = date.getFullYear();
+  let day = date.getDay();
+  if (dayOfWeek[day] === "Sunday") {
+    return year;
+  }
+  console.log(dayOfWeek[day]);
+}
+
+console.log(unixInSundayOut(1704151865));
+
+function takeDateReturnSundayYear(monthAndNumOfDay) {
+  let myArray = monthAndNumOfDay.split(" ");
+  let month = [];
+  let day = [];
+  myArray.forEach((str) => {
+    if (/\d/.test(str) === true) {
+      day.push(str);
+    }
+  });
+  if (monthAndNumOfDay.includes("jan")) {
+    month.push(0);
+  } else if (monthAndNumOfDay.includes("feb")) {
+    month.push(1);
+  } else if (monthAndNumOfDay.includes("mar")) {
+    month.push(2);
+  } else if (monthAndNumOfDay.includes("apr")) {
+    month.push(3);
+  } else if (monthAndNumOfDay.includes("may")) {
+    month.push(4);
+  } else if (monthAndNumOfDay.includes("jun")) {
+    month.push(5);
+  } else if (monthAndNumOfDay.includes("jul")) {
+    month.push(6);
+  } else if (monthAndNumOfDay.includes("aug")) {
+    month.push(7);
+  } else if (monthAndNumOfDay.includes("sep")) {
+    month.push(8);
+  } else if (monthAndNumOfDay.includes("oct")) {
+    month.push(9);
+  } else if (monthAndNumOfDay.includes("nov")) {
+    month.push(10);
+  } else if (monthAndNumOfDay.includes("dec")) {
+    month.push(11);
+  }
+  return month + " " + day;
+}
+
+console.log(takeDateReturnSundayYear("jan 12"));
+
 // #4 Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
 let exampleArray = [
   { name: "ryu", grade: 65 },
@@ -92,4 +152,5 @@ function classAverages(objArray) {
   );
 }
 
-console.log(classAverages(exampleArray));
+// console.log(classAverages(exampleArray));
+//
