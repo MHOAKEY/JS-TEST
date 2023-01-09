@@ -72,52 +72,48 @@ function unixInSundayOut(unixTimeCode) {
   } else false;
 }
 
-console.log(unixInSundayOut(1736654400));
+// console.log(unixInSundayOut(1736654400));
 
 function takeDateReturnSundayYear(monthAndNumOfDay) {
   let myArray = monthAndNumOfDay.split(" ");
   let year = 2024;
-  let month = [];
-  let day = [];
+  let month = 0;
+  let day = 0;
 
   myArray.forEach((str) => {
     if (/\d/.test(str) === true) {
-      day.push(str);
+      day = str;
     }
   });
   if (monthAndNumOfDay.includes("jan")) {
-    month.push(01);
+    month = 01;
   } else if (monthAndNumOfDay.includes("feb")) {
-    month.push(02);
+    month = 02;
   } else if (monthAndNumOfDay.includes("mar")) {
-    month.push(03);
+    month = 03;
   } else if (monthAndNumOfDay.includes("apr")) {
-    month.push(04);
+    month = 04;
   } else if (monthAndNumOfDay.includes("may")) {
-    month.push(05);
+    month = 05;
   } else if (monthAndNumOfDay.includes("jun")) {
-    month.push(06);
+    month = 06;
   } else if (monthAndNumOfDay.includes("jul")) {
-    month.push(07);
+    month = 07;
   } else if (monthAndNumOfDay.includes("aug")) {
-    month.push(08);
+    month = 08;
   } else if (monthAndNumOfDay.includes("sep")) {
-    month.push(09);
+    month = 09;
   } else if (monthAndNumOfDay.includes("oct")) {
-    month.push(10);
+    month = 10;
   } else if (monthAndNumOfDay.includes("nov")) {
-    month.push(11);
+    month = 11;
   } else if (monthAndNumOfDay.includes("dec")) {
-    month.push(12);
+    month = 12;
   }
   //   let oneYearUnix = 31556926;
   let dateStr = year + "-" + month + "-" + day + " " + 00 + ":" + 00 + ":" + 00;
   let date = new Date(dateStr);
-  console.log(date);
-  let unixTimestamp = Math.floor(date.getTime() / 1000);
-  console.log(unixTimestamp);
-
-  //   return month + " " + day;
+  return date;
 }
 
 console.log(takeDateReturnSundayYear("jan 12"));
