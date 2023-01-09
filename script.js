@@ -54,23 +54,23 @@ function areaOfTriangle(a, b, c) {
 // example: jan 1
 // answer: 2023
 
-function unixInSundayOut(unixTimeCode) {
-  let dayOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let date = new Date(unixTimeCode * 1000);
-  let year = date.getFullYear();
-  let day = date.getDay();
-  if (dayOfWeek[day] === "Sunday") {
-    return year;
-  } else false;
-}
+// function unixInSundayOut(unixTimeCode) {
+//   let dayOfWeek = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   let date = new Date(unixTimeCode * 1000);
+//   let year = date.getFullYear();
+//   let day = date.getDay();
+//   if (dayOfWeek[day] === "Sunday") {
+//     return year;
+//   } else false;
+// }
 
 // console.log(unixInSundayOut(1736654400));
 
@@ -114,8 +114,12 @@ function takeDateReturnSundayYear(monthAndNumOfDay) {
   let dateStr = year + "-" + month + "-" + day + " " + 00 + ":" + 00 + ":" + 00;
   let date = new Date(dateStr);
   let dayNumber = date.getDay();
-
-  console.log(dayNumber);
+  while (dayNumber !== 0) {
+    year++;
+    dateStr = year + "-" + month + "-" + day + " " + 00 + ":" + 00 + ":" + 00;
+    date = new Date(dateStr);
+    dayNumber = date.getDay();
+  }
   return date.getFullYear();
 }
 
