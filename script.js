@@ -69,47 +69,55 @@ function unixInSundayOut(unixTimeCode) {
   let day = date.getDay();
   if (dayOfWeek[day] === "Sunday") {
     return year;
-  }
-  console.log(dayOfWeek[day]);
+  } else false;
 }
 
-console.log(unixInSundayOut(1704151865));
+console.log(unixInSundayOut(1736654400));
 
 function takeDateReturnSundayYear(monthAndNumOfDay) {
   let myArray = monthAndNumOfDay.split(" ");
+  let year = 2024;
   let month = [];
   let day = [];
+
   myArray.forEach((str) => {
     if (/\d/.test(str) === true) {
       day.push(str);
     }
   });
   if (monthAndNumOfDay.includes("jan")) {
-    month.push(0);
+    month.push(01);
   } else if (monthAndNumOfDay.includes("feb")) {
-    month.push(1);
+    month.push(02);
   } else if (monthAndNumOfDay.includes("mar")) {
-    month.push(2);
+    month.push(03);
   } else if (monthAndNumOfDay.includes("apr")) {
-    month.push(3);
+    month.push(04);
   } else if (monthAndNumOfDay.includes("may")) {
-    month.push(4);
+    month.push(05);
   } else if (monthAndNumOfDay.includes("jun")) {
-    month.push(5);
+    month.push(06);
   } else if (monthAndNumOfDay.includes("jul")) {
-    month.push(6);
+    month.push(07);
   } else if (monthAndNumOfDay.includes("aug")) {
-    month.push(7);
+    month.push(08);
   } else if (monthAndNumOfDay.includes("sep")) {
-    month.push(8);
+    month.push(09);
   } else if (monthAndNumOfDay.includes("oct")) {
-    month.push(9);
-  } else if (monthAndNumOfDay.includes("nov")) {
     month.push(10);
-  } else if (monthAndNumOfDay.includes("dec")) {
+  } else if (monthAndNumOfDay.includes("nov")) {
     month.push(11);
+  } else if (monthAndNumOfDay.includes("dec")) {
+    month.push(12);
   }
-  return month + " " + day;
+  //   let oneYearUnix = 31556926;
+  let dateStr = year + "-" + month + "-" + day + " " + 00 + ":" + 00 + ":" + 00;
+  let date = new Date(dateStr);
+  console.log(date);
+  let unixTimestamp = Math.floor(date.getTime() / 1000);
+  console.log(unixTimestamp);
+
+  //   return month + " " + day;
 }
 
 console.log(takeDateReturnSundayYear("jan 12"));
