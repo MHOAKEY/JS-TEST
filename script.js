@@ -113,7 +113,10 @@ function takeDateReturnSundayYear(monthAndNumOfDay) {
   //   let oneYearUnix = 31556926;
   let dateStr = year + "-" + month + "-" + day + " " + 00 + ":" + 00 + ":" + 00;
   let date = new Date(dateStr);
-  return date;
+  let dayNumber = date.getDay();
+
+  console.log(dayNumber);
+  return date.getFullYear();
 }
 
 console.log(takeDateReturnSundayYear("jan 12"));
