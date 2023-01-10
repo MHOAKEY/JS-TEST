@@ -123,7 +123,7 @@ function takeDateReturnSundayYear(monthAndNumOfDay) {
   return date.getFullYear();
 }
 
-console.log(takeDateReturnSundayYear("jan 12"));
+// console.log(takeDateReturnSundayYear("jan 12"));
 
 // #4 Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
 let exampleArray = [
@@ -165,3 +165,15 @@ function classAverages(objArray) {
 
 // console.log(classAverages(exampleArray));
 //
+
+// #5 write a function that takes a string and replaces every letter in the string with the next letter in the alphabet. (if the letter is z, change it to a)
+
+//    example: "dogfrog"
+//    answer: "ephgsph"
+
+function changeLetter(str) {
+  let newStr = str.toLowerCase();
+  return newStr;
+}
+
+console.log(changeLetter("ABC"));
