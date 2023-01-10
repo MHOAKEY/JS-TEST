@@ -173,6 +173,9 @@ function classAverages(objArray) {
 
 function changeLetter(str) {
   let newStr = str.toLowerCase();
+  for (let i = 0; i < newStr.length; i++) {
+    console.log(newStr[i]);
+  }
   return newStr;
 }
 
