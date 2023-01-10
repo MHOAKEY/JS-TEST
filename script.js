@@ -174,11 +174,14 @@ function classAverages(objArray) {
 function changeLetter(str) {
   let newStr = str.toLowerCase();
   let result = "";
+  let change;
   for (let i = 0; i < newStr.length; i++) {
-    let change = String.fromCharCode(newStr.charCodeAt(i) + 1);
+    if (newStr.charCodeAt(i) + 1 > 122) {
+      change = String.fromCharCode(97);
+    } else change = String.fromCharCode(newStr.charCodeAt(i) + 1);
     result += change;
   }
   return result;
 }
 
-console.log(changeLetter("ABC"));
+console.log(changeLetter("ABCXYZ"));
