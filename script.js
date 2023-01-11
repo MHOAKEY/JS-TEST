@@ -223,12 +223,14 @@ function solveMathOperator(equation) {
 function sortString(str) {
   let arr = str.split(" ");
   let arr2 = [];
+  let answer;
   arr.forEach((index) => {
     for (let i = 0; i < index.length; i++) {
       arr2.push(index[i]);
     }
   });
-  return arr2;
+  answer = arr2.sort();
+  return answer;
 }
 
 console.log(sortString("hello my name is evan"));
