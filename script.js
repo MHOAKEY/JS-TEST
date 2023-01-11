@@ -196,8 +196,8 @@ function changeLetter(str) {
 //    answer: +
 
 function solveMathOperator(equation) {
-  let equationArray = equation.split(" ");
-  return equationArray;
+  let Arr = equation.split(" ");
+  console.log(Arr);
 }
 
 console.log(solveMathOperator("10 $ 2 = 5"));
