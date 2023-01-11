@@ -212,4 +212,17 @@ function solveMathOperator(equation) {
   } else answer = "Does not work";
   return "answer: " + answer;
 }
-console.log(solveMathOperator("21 $ 6 = 26"));
+// console.log(solveMathOperator("21 $ 6 = 26"));
+//
+
+// #7 Write a function that reorders a string in alphabetical order. Make sure to account for capital letters.
+
+//    example: "hello my name is evan"
+//    answer: "aaeeehillmmnnosvy"
+
+function sortString(str) {
+  let arr = str.split(" ");
+  return arr;
+}
+
+console.log(sortString("hello my name is evan"));
