@@ -230,7 +230,7 @@ function sortString(str) {
     }
   });
   answer = arr2.sort();
-  return answer;
+  return answer.toString();
 }
 
 console.log(sortString("hello my name is evan"));
