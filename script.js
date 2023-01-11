@@ -196,7 +196,9 @@ function changeLetter(str) {
 //    answer: +
 
 function solveMathOperator(equation, result) {
+  let leftSide = equation.replace("$", "/");
   console.log(equation);
+  console.log(leftSide);
   console.log(result);
 }
 
