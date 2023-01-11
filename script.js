@@ -172,13 +172,14 @@ function classAverages(objArray) {
 //    answer: "ephgsph"
 
 function changeLetter(str) {
-  let newStr = str.toLowerCase();
   let result = "";
   let change;
-  for (let i = 0; i < newStr.length; i++) {
-    if (newStr.charCodeAt(i) + 1 > 122) {
+  for (let i = 0; i < str.length; i++) {
+    if (str.charCodeAt(i) + 1 > 122) {
       change = String.fromCharCode(97);
-    } else change = String.fromCharCode(newStr.charCodeAt(i) + 1);
+    } else if (str.charCodeAt(i) + 1 > 90) {
+      change = String.fromCharCode(65);
+    } else change = String.fromCharCode(str.charCodeAt(i) + 1);
     result += change;
   }
   return result;
