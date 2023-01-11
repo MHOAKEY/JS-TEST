@@ -185,4 +185,19 @@ function changeLetter(str) {
   return result;
 }
 
-console.log(changeLetter("ABCXYZ"));
+// console.log(changeLetter("ABCXYZ"));
+//
+
+// #6 Write a function that finds out what math operator will replace a $ in a given equation (+, -, /, *)
+
+//    example: "10 $ 2 = 5"
+//    answer: /
+//    example: "21 $ 5 = 26"
+//    answer: +
+
+function solveMathOperator(equation, result) {
+  console.log(equation);
+  console.log(result);
+}
+
+console.log(solveMathOperator("10 $ 2", "5"));
