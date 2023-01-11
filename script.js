@@ -209,7 +209,7 @@ function solveMathOperator(equation) {
     answer = "/";
   } else if (int1 * int2 === int3) {
     answer = "*";
-  }
+  } else answer = "Does not work";
   return "answer: " + answer;
 }
-console.log(solveMathOperator("21 $ 5 = 26"));
+console.log(solveMathOperator("21 $ 6 = 26"));
