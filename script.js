@@ -195,11 +195,8 @@ function changeLetter(str) {
 //    example: "21 $ 5 = 26"
 //    answer: +
 
-function solveMathOperator(equation, result) {
-  let leftSide = equation.replace("$", "/");
+function solveMathOperator(equation) {
   console.log(equation);
-  console.log(leftSide);
-  console.log(result);
 }
 
-console.log(solveMathOperator("10 $ 2", "5"));
+console.log(solveMathOperator("10 $ 2 = 5"));
