@@ -196,6 +196,9 @@ function changeLetter(str) {
 //    answer: +
 
 function solveMathOperator(equation) {
+  let int1;
+  let int2;
+  let int3;
   console.log(equation);
 }
 
