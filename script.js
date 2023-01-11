@@ -222,7 +222,13 @@ function solveMathOperator(equation) {
 
 function sortString(str) {
   let arr = str.split(" ");
-  return arr;
+  let arr2 = [];
+  arr.forEach((index) => {
+    for (let i = 0; i < index.length; i++) {
+      arr2.push(index[i]);
+    }
+  });
+  return arr2;
 }
 
 console.log(sortString("hello my name is evan"));
