@@ -201,5 +201,15 @@ function solveMathOperator(equation) {
   let int2 = parseInt(Arr[2]);
   let int3 = parseInt(Arr[4]);
   let answer;
+  if (int1 + int2 === int3) {
+    answer = "+";
+  } else if (int1 - int2 === int3) {
+    answer = "-";
+  } else if (int1 / int2 === int3) {
+    answer = "/";
+  } else if (int1 * int2 === int3) {
+    answer = "*";
+  }
+  return "answer: " + answer;
 }
-console.log(solveMathOperator("10 $ 2 = 5"));
+console.log(solveMathOperator("21 $ 5 = 26"));
