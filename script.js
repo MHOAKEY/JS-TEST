@@ -196,10 +196,16 @@ function changeLetter(str) {
 //    answer: +
 
 function solveMathOperator(equation) {
-  let int1;
-  let int2;
-  let int3;
+  let int1 = "";
+  let int2 = "";
+  let int3 = "";
+  for (let i = 0; i < equation.length; i++) {
+    if (equation[i] === " ") {
+      break;
+    } else int1 += equation[i];
+  }
   console.log(equation);
+  console.log(parseInt(int1));
 }
 
 console.log(solveMathOperator("10 $ 2 = 5"));
