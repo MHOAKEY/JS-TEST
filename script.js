@@ -28,7 +28,7 @@ function calculateTime() {
 }
 
 // #2 Write a function that takes the lengths of 3 sides of a triangle and returns the area. Round answer to 2 decimal places. If area is 0 then return "Impossible Triangle".
-
+//
 // Area = Square root of s(s - a)(s - b)(s - c)
 // s is the semi perimeter, or (a + b + c)/2.```
 
@@ -126,6 +126,7 @@ function takeDateReturnSundayYear(monthAndNumOfDay) {
 // console.log(takeDateReturnSundayYear("jan 12"));
 
 // #4 Write a function that takes an array of objects (each object has a Student Name and Grade). The function should return the average mark for the class and display the students that performed above the average and the students that performed belowed the average.
+
 let exampleArray = [
   { name: "ryu", grade: 65 },
   { name: "ken", grade: 86 },
@@ -167,7 +168,7 @@ function classAverages(objArray) {
 //
 
 // #5 write a function that takes a string and replaces every letter in the string with the next letter in the alphabet. (if the letter is z, change it to a)
-
+//
 //    example: "dogfrog"
 //    answer: "ephgsph"
 
@@ -189,7 +190,7 @@ function changeLetter(str) {
 //
 
 // #6 Write a function that finds out what math operator will replace a $ in a given equation (+, -, /, *)
-
+//
 //    example: "10 $ 2 = 5"
 //    answer: /
 //    example: "21 $ 5 = 26"
@@ -216,7 +217,7 @@ function solveMathOperator(equation) {
 //
 
 // #7 Write a function that reorders a string in alphabetical order. Make sure to account for capital letters.
-
+//
 //    example: "hello my name is evan"
 //    answer: "aaeeehillmmnnosvy"
 
@@ -233,4 +234,17 @@ function sortString(str) {
   return answer;
 }
 
-console.log(sortString("hello my name is evan"));
+// console.log(sortString("hello my name is evan"));
+//
+
+// #8 Write a function that takes a string and returns the longest word within the string.
+//
+//    example: "hello my name is evan and I am a software developer"
+//    answer: "developer"
+
+function findLongWord(str) {
+  let arr = str.split(" ");
+  console.log(arr);
+}
+
+console.log(findLongWord("hello my name is evan and i am a softare developer"));
