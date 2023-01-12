@@ -229,8 +229,8 @@ function sortString(str) {
       arr2.push(index[i]);
     }
   });
-  answer = arr2.sort();
-  return answer.toString();
+  answer = arr2.sort().join("");
+  return answer;
 }
 
 console.log(sortString("hello my name is evan"));
