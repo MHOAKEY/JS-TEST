@@ -250,4 +250,10 @@ function findLongWord(str) {
   return arr[0];
 }
 
-console.log(findLongWord("hello my name is evan and i am a softare developer"));
+// console.log(findLongWord("hello my name is evan and i am a softare developer"));
+//
+
+// #9 Write a function that tells you what change to give based on a dollar and cent value entered.
+//
+//    example: 42.79
+//    answer: "2 $20 bills, 1 Twoonie, 3 quarters, 1 nickel, 4 pennies"
