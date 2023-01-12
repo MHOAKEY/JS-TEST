@@ -245,6 +245,11 @@ function sortString(str) {
 function findLongWord(str) {
   let arr = str.split(" ");
   console.log(arr);
+  let wordLengths = [];
+  arr.forEach((word) => {
+    wordLengths.push(word.length);
+  });
+  console.log(wordLengths);
 }
 
 console.log(findLongWord("hello my name is evan and i am a softare developer"));
