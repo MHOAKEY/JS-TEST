@@ -273,6 +273,17 @@ function howMuchChange(price) {
     { name: "pennie", value: 0.01 },
   ];
   let value = 0;
-  let remainder = [];
-  let correctChange = [];
+  let quantityOfCurrency = [];
+  let currency = [];
+  for (i = 0; i < arr.length; i++) {
+    if (price % arr[i].value != price && price % arr[i].value >= 1) {
+      currency.push(arr[i].value);
+      quantityOfCurrency.push(Math.floor(price / currency[0]));
+      break;
+    }
+  }
+  console.log("currency used: " + currency);
+  return "Quantity of Currency: " + quantityOfCurrency;
 }
+
+console.log(howMuchChange(42.79));
