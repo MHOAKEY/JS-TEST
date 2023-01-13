@@ -272,4 +272,7 @@ function howMuchChange(price) {
     { name: "nickel", value: 0.05 },
     { name: "pennie", value: 0.01 },
   ];
+  let value = 0;
+  let remainder = [];
+  let correctChange = [];
 }
