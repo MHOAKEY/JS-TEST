@@ -283,15 +283,18 @@ function howMuchChange(price) {
       break;
     }
   }
-  for (i = 0; i < arr.length; i++) {
-    if (remainder % arr[i].value != remainder) {
-      currency.push(arr[i].value);
-      quantityOfCurrency.push(
-        Math.floor(remainder / currency[currency.length - 1])
-      );
-      remainder = remainder % arr[i].value;
-      break;
+  while (i < 11) {
+    for (i = 0; i < arr.length; i++) {
+      if (remainder % arr[i].value != remainder) {
+        currency.push(arr[i].value);
+        quantityOfCurrency.push(
+          Math.floor(remainder / currency[currency.length - 1])
+        );
+        remainder = remainder % arr[i].value;
+        break;
+      }
     }
+    i++;
   }
   console.log("currency used: " + currency);
   console.log("Quantity of Currency: " + quantityOfCurrency);
