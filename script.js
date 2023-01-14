@@ -283,15 +283,14 @@ function howMuchChange(price) {
         quantityOfCurrency.push(
           Math.floor(remainder / currency[currency.length - 1])
         );
-        remainder = remainder % arr[i].value;
+        remainder = remainder.toFixed(2) % arr[i].value;
         break;
       }
     }
     x++;
-    
+  }
   console.log("currency used: " + currency);
   console.log("Quantity of Currency: " + quantityOfCurrency);
   console.log("remainder: " + remainder);
 }
-
 console.log(howMuchChange(42.79));
