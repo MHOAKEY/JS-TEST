@@ -265,7 +265,7 @@ function howMuchChange(price) {
     { name: "$20", value: 20 },
     { name: "$10", value: 10 },
     { name: "$5", value: 5 },
-    { name: "twonie", value: 2 },
+    { name: "twoonie", value: 2 },
     { name: "loonie", value: 1 },
     { name: "quarter", value: 0.25 },
     { name: "dime", value: 0.1 },
@@ -279,7 +279,7 @@ function howMuchChange(price) {
   while (x < arr.length - 1) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
-        currency.push(arr[i].value);
+        currency.push(arr[i].value) && returnStr.push(arr[i].name);
         quantityOfCurrency.push(
           Math.floor(price / currency[currency.length - 1])
         );
