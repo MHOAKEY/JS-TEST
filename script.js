@@ -272,27 +272,25 @@ function howMuchChange(price) {
     { name: "nickel", value: 0.05 },
     { name: "pennie", value: 0.01 },
   ];
-  let quantityOfCurrency = [];
-  let currency = [];
+  let currencyUsed = [];
   let returnStr = [];
   let x = 0;
   while (x < arr.length - 1) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
-        currency.push(arr[i].value) &&
-          returnStr.push(
-            Math.floor(price / currency[currency.length - 1]).toString() +
-              " " +
-              arr[i].name
-          );
-
+        currencyUsed.push(arr[i].value);
+        returnStr.push(
+          Math.floor(price / currencyUsed[currencyUsed.length - 1]).toString() +
+            " " +
+            arr[i].name
+        );
         price = price.toFixed(2) % arr[i].value;
         break;
       }
     }
     x++;
   }
-  console.log("currency used: " + currency);
-  return returnStr;
+  console.log("currency used: " + currencyUsed);
+  return returnStr.join(",");
 }
-console.log(howMuchChange(42.79));
+console.log(howMuchChange(42.73));
