@@ -274,6 +274,7 @@ function howMuchChange(price) {
   ];
   let currencyUsed = [];
   let returnStr = [];
+  let returnStr2 = [];
   let x = 0;
   while (x < arr.length - 1) {
     for (i = 0; i < arr.length; i++) {
@@ -290,7 +291,11 @@ function howMuchChange(price) {
     }
     x++;
   }
-  console.log("currency used: " + currencyUsed);
-  return returnStr.join(",");
+  returnStr.forEach((string) => {
+    if (string.includes("1") != true) {
+      returnStr2.push(" " + string + "s");
+    }
+  });
+  return returnStr2.join(",");
 }
-console.log(howMuchChange(42.73));
+console.log(howMuchChange(42.79));
