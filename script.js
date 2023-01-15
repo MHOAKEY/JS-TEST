@@ -279,10 +279,13 @@ function howMuchChange(price) {
   while (x < arr.length - 1) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
-        currency.push(arr[i].value) && returnStr.push(arr[i].name);
-        quantityOfCurrency.push(
-          Math.floor(price / currency[currency.length - 1])
-        );
+        currency.push(arr[i].value) &&
+          returnStr.push(
+            Math.floor(price / currency[currency.length - 1]).toString() +
+              " " +
+              arr[i].name
+          );
+
         price = price.toFixed(2) % arr[i].value;
         break;
       }
@@ -290,8 +293,6 @@ function howMuchChange(price) {
     x++;
   }
   console.log("currency used: " + currency);
-  console.log("Quantity of Currency: " + quantityOfCurrency);
-  console.log("remainder: " + price);
   return returnStr;
 }
 console.log(howMuchChange(42.79));
