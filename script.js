@@ -260,17 +260,16 @@ function findLongWord(str) {
 
 function howMuchChange(price) {
   let arr = [
-    { name: "$100", value: 100 },
-    { name: "$50", value: 50 },
-    { name: "$20", value: 20 },
-    { name: "$10", value: 10 },
-    { name: "$5", value: 5 },
+    { name: "$100 bill", value: 100 },
+    { name: "$50 bill", value: 50 },
+    { name: "$20 bill", value: 20 },
+    { name: "$10 bill", value: 10 },
+    { name: "$5 bill", value: 5 },
     { name: "twoonie", value: 2 },
     { name: "loonie", value: 1 },
     { name: "quarter", value: 0.25 },
     { name: "dime", value: 0.1 },
     { name: "nickel", value: 0.05 },
-    { name: "pennie", value: 0.01 },
   ];
   let currencyUsed = [];
   let returnStr = [];
@@ -294,8 +293,17 @@ function howMuchChange(price) {
   returnStr.forEach((string) => {
     if (string.includes("1") != true) {
       returnStr2.push(" " + string + "s");
-    }
+    } else returnStr2.push(" " + string);
   });
+  if (price.toFixed(2) === "0.01") {
+    returnStr2.push(" 1 penny");
+  } else if (price.toFixed(2) === "0.02") {
+    returnStr2.push(" 2 pennies");
+  } else if (price.toFixed(2) === "0.03") {
+    returnStr2.push(" 3 pennies");
+  } else if (price.toFixed(2) === "0.04") {
+    returnStr2.push(" 4 pennies");
+  }
   return returnStr2.join(",");
 }
-console.log(howMuchChange(42.79));
+console.log(howMuchChange(42.73));
