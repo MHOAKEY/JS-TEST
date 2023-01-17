@@ -256,7 +256,7 @@ function findLongWord(str) {
 // #9 Write a function that tells you what change to give based on a dollar and cent value entered.
 //
 //    example: 42.79
-//    answer: "2 $20 bills, 1 Twoonie, 3 quarters, 1 nickel, 4 pennies"
+//    answer: "2 $20 bills, 1 twoonie, 3 quarters, 4 pennies"
 
 function howMuchChange(price) {
   price = Math.floor(price * 100);
@@ -267,11 +267,11 @@ function howMuchChange(price) {
     { name: " $20 bill", value: 2000 },
     { name: " $10 bill", value: 1000 },
     { name: " $5 bill", value: 500 },
-    { name: " twoonie", value: 200 },
-    { name: " loonie", value: 100 },
-    { name: " quarter", value: 25 },
-    { name: " dime", value: 10 },
-    { name: " nickel", value: 5 },
+    { name: " Twoonie", value: 200 },
+    { name: " Loonie", value: 100 },
+    { name: " Quarter", value: 25 },
+    { name: " Dime", value: 10 },
+    { name: " Nickel", value: 5 },
   ];
 
   let result = [];
@@ -290,11 +290,11 @@ function howMuchChange(price) {
     x++;
   }
   if (price === 1) {
-    result.push("1 penny");
+    result.push("1 Penny");
   } else if (price > 1) {
-    result.push(price + " pennies");
+    result.push(price + " Pennies");
   }
 
   return result;
 }
-console.log(howMuchChange(80081.3));
+console.log(howMuchChange(42.79));
