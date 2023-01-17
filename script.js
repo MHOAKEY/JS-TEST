@@ -267,33 +267,51 @@ function howMuchChange(price) {
     { name: " $5 bill", value: 5 },
     { name: " twoonie", value: 2 },
     { name: " loonie", value: 1 },
-    { name: " quarter", value: 0.25 },
-    { name: " dime", value: 0.1 },
-    { name: " nickel", value: 0.05 },
+  ];
+  let arr2 = [
+    { name: " quarter", value: 25 },
+    { name: " dime", value: 10 },
+    { name: " nickel", value: 5 },
   ];
   let result = [];
+  let change = Math.floor((price - Math.floor(price)) * 100);
   let x = 0;
+  let y = 0;
+  price = Math.floor(price);
   while (x < arr.length) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
         if (Math.floor(price / arr[i].value) > 1) {
           result.push(Math.floor(price / arr[i].value) + arr[i].name + "s");
         } else result.push(Math.floor(price / arr[i].value) + arr[i].name);
-        price =
-          price.toFixed(2) - Math.floor(price / arr[i].value) * arr[i].value;
+        price = price - Math.floor(price / arr[i].value) * arr[i].value;
         break;
       }
     }
     x++;
   }
-  if (price.toFixed(2) === "0.01") {
+  while (y < arr2.length) {
+    for (i = 0; i < arr2.length; i++) {
+      if (change % arr2[i].value != change) {
+        if (Math.floor(change / arr2[i].value) > 1) {
+          result.push(Math.floor(change / arr2[i].value) + arr2[i].name + "s");
+        } else result.push(Math.floor(change / arr2[i].value) + arr2[i].name);
+        change =
+          change.toFixed(2) -
+          Math.floor(change / arr2[i].value) * arr2[i].value;
+        break;
+      }
+    }
+    y++;
+  }
+  if (change === 1) {
     result.push("1 penny");
-  } else if (price.toFixed(2) === "0.02") {
+  } else if (change === 2) {
     result.push("2 pennies");
-  } else if (price.toFixed(2) === "0.03") {
+  } else if (change === 4) {
     result.push("3 pennies");
   } else result.push(" 4 pennies");
 
   return result;
 }
-console.log(howMuchChange(42.79));
+console.log(howMuchChange(80081.44));
