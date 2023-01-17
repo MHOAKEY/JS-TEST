@@ -259,25 +259,24 @@ function findLongWord(str) {
 //    answer: "2 $20 bills, 1 Twoonie, 3 quarters, 1 nickel, 4 pennies"
 
 function howMuchChange(price) {
+  price = Math.floor(price * 100);
+
   let arr = [
-    { name: " $100 bill", value: 100 },
-    { name: " $50 bill", value: 50 },
-    { name: " $20 bill", value: 20 },
-    { name: " $10 bill", value: 10 },
-    { name: " $5 bill", value: 5 },
-    { name: " twoonie", value: 2 },
-    { name: " loonie", value: 1 },
-  ];
-  let arr2 = [
+    { name: " $100 bill", value: 10000 },
+    { name: " $50 bill", value: 5000 },
+    { name: " $20 bill", value: 2000 },
+    { name: " $10 bill", value: 1000 },
+    { name: " $5 bill", value: 500 },
+    { name: " twoonie", value: 200 },
+    { name: " loonie", value: 100 },
     { name: " quarter", value: 25 },
     { name: " dime", value: 10 },
     { name: " nickel", value: 5 },
   ];
+
   let result = [];
-  let change = Math.floor((price - Math.floor(price)) * 100);
   let x = 0;
-  let y = 0;
-  price = Math.floor(price);
+
   while (x < arr.length) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
@@ -290,28 +289,18 @@ function howMuchChange(price) {
     }
     x++;
   }
-  while (y < arr2.length) {
-    for (i = 0; i < arr2.length; i++) {
-      if (change % arr2[i].value != change) {
-        if (Math.floor(change / arr2[i].value) > 1) {
-          result.push(Math.floor(change / arr2[i].value) + arr2[i].name + "s");
-        } else result.push(Math.floor(change / arr2[i].value) + arr2[i].name);
-        change =
-          change.toFixed(2) -
-          Math.floor(change / arr2[i].value) * arr2[i].value;
-        break;
-      }
-    }
-    y++;
-  }
-  if (change === 1) {
+  console.log(price);
+
+  if (price === 1) {
     result.push("1 penny");
-  } else if (change === 2) {
+  } else if (price === 2) {
     result.push("2 pennies");
-  } else if (change === 3) {
+  } else if (price === 3) {
     result.push("3 pennies");
-  } else result.push(" 4 pennies");
+  } else if (price === 4) {
+    result.push(" 4 pennies");
+  }
 
   return result;
 }
-console.log(howMuchChange(0.41));
+console.log(howMuchChange(80081.39));
