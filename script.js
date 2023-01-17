@@ -289,17 +289,12 @@ function howMuchChange(price) {
     }
     x++;
   }
-
   if (price === 1) {
     result.push("1 penny");
-  } else if (price === 2) {
-    result.push("2 pennies");
-  } else if (price === 3) {
-    result.push("3 pennies");
-  } else if (price === 4) {
-    result.push(" 4 pennies");
+  } else if (price > 1) {
+    result.push(price + " pennies");
   }
 
   return result;
 }
-console.log(howMuchChange(80081.39));
+console.log(howMuchChange(80081.3));
