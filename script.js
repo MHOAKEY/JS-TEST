@@ -289,7 +289,6 @@ function howMuchChange(price) {
     }
     x++;
   }
-  console.log(price);
 
   if (price === 1) {
     result.push("1 penny");
