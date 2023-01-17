@@ -308,10 +308,10 @@ function howMuchChange(price) {
     result.push("1 penny");
   } else if (change === 2) {
     result.push("2 pennies");
-  } else if (change === 4) {
+  } else if (change === 3) {
     result.push("3 pennies");
   } else result.push(" 4 pennies");
 
   return result;
 }
-console.log(howMuchChange(80081.44));
+console.log(howMuchChange(0.41));
