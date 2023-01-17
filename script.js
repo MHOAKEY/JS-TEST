@@ -260,50 +260,40 @@ function findLongWord(str) {
 
 function howMuchChange(price) {
   let arr = [
-    { name: "$100 bill", value: 100 },
-    { name: "$50 bill", value: 50 },
-    { name: "$20 bill", value: 20 },
-    { name: "$10 bill", value: 10 },
-    { name: "$5 bill", value: 5 },
-    { name: "twoonie", value: 2 },
-    { name: "loonie", value: 1 },
-    { name: "quarter", value: 0.25 },
-    { name: "dime", value: 0.1 },
-    { name: "nickel", value: 0.05 },
+    { name: " $100 bill", value: 100 },
+    { name: " $50 bill", value: 50 },
+    { name: " $20 bill", value: 20 },
+    { name: " $10 bill", value: 10 },
+    { name: " $5 bill", value: 5 },
+    { name: " twoonie", value: 2 },
+    { name: " loonie", value: 1 },
+    { name: " quarter", value: 0.25 },
+    { name: " dime", value: 0.1 },
+    { name: " nickel", value: 0.05 },
   ];
-  let currencyUsed = [];
-  let returnStr = [];
-  let returnStr2 = [];
+  let result = [];
   let x = 0;
-  while (x < arr.length - 1) {
+  while (x < arr.length) {
     for (i = 0; i < arr.length; i++) {
       if (price % arr[i].value != price) {
-        currencyUsed.push(arr[i].value);
-        returnStr.push(
-          Math.floor(price / currencyUsed[currencyUsed.length - 1]).toString() +
-            " " +
-            arr[i].name
-        );
-        price = price.toFixed(2) % arr[i].value;
+        if (Math.floor(price / arr[i].value) > 1) {
+          result.push(Math.floor(price / arr[i].value) + arr[i].name + "s");
+        } else result.push(Math.floor(price / arr[i].value) + arr[i].name);
+        price =
+          price.toFixed(2) - Math.floor(price / arr[i].value) * arr[i].value;
         break;
       }
     }
     x++;
   }
-  returnStr.forEach((string) => {
-    if (string.includes("1") != true) {
-      returnStr2.push(" " + string + "s");
-    } else returnStr2.push(" " + string);
-  });
   if (price.toFixed(2) === "0.01") {
-    returnStr2.push(" 1 penny");
+    result.push("1 penny");
   } else if (price.toFixed(2) === "0.02") {
-    returnStr2.push(" 2 pennies");
+    result.push("2 pennies");
   } else if (price.toFixed(2) === "0.03") {
-    returnStr2.push(" 3 pennies");
-  } else if (price.toFixed(2) === "0.04") {
-    returnStr2.push(" 4 pennies");
-  }
-  return returnStr2.join(",");
+    result.push("3 pennies");
+  } else result.push(" 4 pennies");
+
+  return result;
 }
-console.log(howMuchChange(42.73));
+console.log(howMuchChange(42.79));
