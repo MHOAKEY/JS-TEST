@@ -316,7 +316,11 @@ let example = {
 //   }
 
 function swapKeyValue(object) {
-  let reverseObject = {};
-  let propertyName;
-  let propertyValue;
+  let reverseObject = Object.entries(object).map(([key, value]) => [
+    value,
+    key,
+  ]);
+  return Object.fromEntries(reverseObject);
 }
+
+console.log(swapKeyValue(example));
