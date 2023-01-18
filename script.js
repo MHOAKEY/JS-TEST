@@ -315,4 +315,8 @@ let example = {
 //       "Jan 6 1974": "birthday",
 //   }
 
-function swapKeyValue(object) {}
+function swapKeyValue(object) {
+  let reverseObject = {};
+  let propertyName;
+  let propertyValue;
+}
