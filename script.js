@@ -314,3 +314,5 @@ let example = {
 //       'blue": "eyes",
 //       "Jan 6 1974": "birthday",
 //   }
+
+function swapKeyValue(object) {}
