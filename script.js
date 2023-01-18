@@ -302,12 +302,12 @@ function howMuchChange(price) {
 
 // # 10 Write a function that takes an object and creates a new object with the keys and values swapped
 //
-//   example: {
-//       "name": "cammy",
-//       "hair": "blonde",
-//       "eyes": "blue",
-//       "birthday": "Jan 6 1974",
-//   }
+let example = {
+  name: "cammy",
+  hair: "blonde",
+  eyes: "blue",
+  birthday: "Jan 6 1974",
+};
 //   answer: {
 //       "cammy': "name",
 //       "blonde": "hair",
