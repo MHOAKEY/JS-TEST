@@ -323,4 +323,5 @@ function swapKeyValue(object) {
   return Object.fromEntries(reverseObject);
 }
 
-console.log(swapKeyValue(example));
+// console.log(swapKeyValue(example));
+//
