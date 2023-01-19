@@ -11,18 +11,22 @@
       <form>
         <input
           type="text"
-          name="unixTimeStamp"
+          name="unixTime"
+          id="unixTimeStamp"
           placeholder="Enter time stamp"
         />
         <input
           type="button"
           id="submitButton"
           value="submit"
-          onclick=" -INSERT FUNCTION- "
+          onclick="calculateTime()"
         />
       </form>
       <span id="day">THE DAY IS:</span><br />
-      <span id="time">THE TIME IS:</span>
+      <span id="hourMinSec">THE TIME IS:</span>
     </div>
+    <footer>
+      <script src="script.js"></script>
+    </footer>
   </body>
 </html>
